@@ -9,5 +9,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ColeRogersLearningAngular';
+  greeting:string = 'Welcome';
+  number:number = 3;
+
 }
+
