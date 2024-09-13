@@ -1,7 +1,7 @@
-export interface User {
-  Id:number;
-  firstName: string,
-  lastName: string,
-  department: string,
-  isAdmin?: boolean
+export interface Person{
+  name: string;
+  age: number;
+  faveFood: string;
+  hairColour: string;
+  isTeamLead?: boolean;
 }
