@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Person} from "../Shared/Modules/user";
 
 @Component({
   selector: 'app-person-list-item',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './person-list-item.component.css'
 })
 export class PersonListItemComponent {
-
+  @Input() Person?: Person;
 }
