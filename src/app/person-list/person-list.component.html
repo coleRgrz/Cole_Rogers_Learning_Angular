@@ -1,5 +1,3 @@
-<app-person-list-item [Person]="person1"></app-person-list-item>
-<app-person-list-item [Person]="person2"></app-person-list-item>
-<app-person-list-item [Person]="person3"></app-person-list-item>
-<app-person-list-item [Person]="person4"></app-person-list-item>
+<app-person-list-item *ngFor="let Person of PersonArray; let i = index" [Person]="Person"></app-person-list-item>
+
 
