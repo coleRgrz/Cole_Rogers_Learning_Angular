@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Person} from "../Shared/Modules/user";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgClass} from "@angular/common";
 import {PersonListItemComponent} from "../person-list-item/person-list-item.component";
 
 @Component({
@@ -8,6 +8,7 @@ import {PersonListItemComponent} from "../person-list-item/person-list-item.comp
   standalone: true,
   imports: [
     NgForOf,
+    NgClass,
     PersonListItemComponent
   ],
   templateUrl: './person-list.component.html',
