@@ -19,6 +19,6 @@ export class PersonListComponent {
   person3 : Person = {name: "Andrew", age: 20, faveFood: "Whopper", hairColour: "Brown", isTeamLead: true};
   person4 : Person = {name: "Madison", age: 23, faveFood: "Chicken", hairColour: "Black", isTeamLead: true};
 
-  personArray: Person[] = [this.person1, this.person2, this.person3, this.person4];
+  Person: Person[] = [this.person1, this.person2, this.person3, this.person4];
 
 }
