@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Person} from "../Shared/Modules/user";
 import {NgForOf, NgClass} from "@angular/common";
 import {PersonListItemComponent} from "../person-list-item/person-list-item.component";
+import {PersonService} from "../services/person.service";
 
 @Component({
   selector: 'app-person-list',
@@ -15,11 +16,7 @@ import {PersonListItemComponent} from "../person-list-item/person-list-item.comp
   styleUrl: './person-list.component.css'
 })
 export class PersonListComponent {
-  person1 : Person = {name: "Cole", age: 20, faveFood: "Brisket", hairColour: "Black", isTeamLead: false};
-  person2 : Person = {name: "Colton", age: 19, faveFood: "Pizza", hairColour: "Brown", isTeamLead: false};
-  person3 : Person = {name: "Andrew", age: 20, faveFood: "Whopper", hairColour: "Brown", isTeamLead: true};
-  person4 : Person = {name: "Madison", age: 23, faveFood: "Chicken", hairColour: "Black", isTeamLead: true};
-
-  PersonArray: Person[] = [this.person1, this.person2, this.person3, this.person4];
+  constructor(private PersonService: PersonService) {
+  }
 
 }

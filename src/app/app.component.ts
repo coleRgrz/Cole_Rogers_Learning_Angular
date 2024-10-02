@@ -13,12 +13,6 @@ import {PersonListComponent} from "./person-list/person-list.component";
 })
 export class AppComponent {
   title = "List of People";
-
-
-  //toggle lead status for my optional property
-  toggleLeadStatus(person: Person): void {
-    person.isTeamLead = !person.isTeamLead;
-  }
 }
 
 
