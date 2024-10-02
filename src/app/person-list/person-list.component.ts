@@ -16,7 +16,15 @@ import {PersonService} from "../services/person.service";
   styleUrl: './person-list.component.css'
 })
 export class PersonListComponent {
+  PersonList: Person [] = [];
   constructor(private PersonService: PersonService) {
   }
 
+  ngOnInit(){
+    this.PersonService.getPersonList().subscribe({
+      next: (data: Person[]) => this.PersonList = data,
+      error: err => console.error("Error fetching People", err),
+      complete:() => console.log("Person data fetch complete!")
+    })
+  }
 }
