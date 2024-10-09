@@ -5,4 +5,5 @@ export interface Person{
   faveFood: string;
   hairColour: string;
   isTeamLead?: boolean;
+  img?: string;
 }

@@ -1,3 +1,9 @@
-<app-person-list-item *ngIf="selectedPerson" [Person]="selectedPerson"></app-person-list-item>
-<app-person-list></app-person-list>
+<div class="nav-bar">
+  <nav>
+    <a routerLink="/Person" routerLinkActive="Active">Person</a>
+    <a routerLink="modify-Person" routerLinkActive="Active">Modify Person</a>
+  </nav>
+</div>
+<router-outlet></router-outlet>
+
 

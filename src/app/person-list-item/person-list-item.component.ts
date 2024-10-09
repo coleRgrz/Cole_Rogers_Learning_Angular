@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Person} from "../Shared/Modules/user";
+import {PersonList} from "../Shared/Modules/mock-person";
 
 @Component({
   selector: 'app-person-list-item',
@@ -10,4 +11,5 @@ import {Person} from "../Shared/Modules/user";
 })
 export class PersonListItemComponent {
   @Input() Person?: Person;
+  protected readonly PersonList = PersonList;
 }
