@@ -21,7 +21,7 @@ export class PersonListComponent {
   }
 
   ngOnInit(){
-    this.PersonService.getPersonList().subscribe({
+    this.PersonService.getPerson().subscribe({
       next: (data: Person[]) => this.PersonList = data,
       error: err => console.error("Error fetching People", err),
       complete:() => console.log("Person data fetch complete!")

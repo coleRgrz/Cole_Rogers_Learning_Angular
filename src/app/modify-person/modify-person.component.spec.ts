@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { ModifyPersonComponent } from './modify-person.component';
 
 describe('ModifyPersonComponent', () => {

@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'Person', component: PersonListComponent},
   {path: 'Person/:id', component: PersonListItemComponent},
   {path: 'modify-Person', component: ModifyPersonComponent},
-  {path: '**', component:PageNotFoundComponent}
+  {path: '**', component:PageNotFoundComponent},
 ];
 
 bootstrapApplication(AppComponent, {providers:[provideRouter(routes)]})

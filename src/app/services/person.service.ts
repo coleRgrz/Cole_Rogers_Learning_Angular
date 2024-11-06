@@ -7,33 +7,36 @@ import {Observable, of} from "rxjs";
   providedIn: 'root'
 })
 export class PersonService {
-  private PersonList: Person[] = PersonList;
+  private persons: Person[] = PersonList;
 
   constructor() { }
-  getPersonList(): Observable<Person[]>{
-    return of(PersonList);
+  getPerson(): Observable<Person[]>{
+    return of(this.persons);
   }
-  //create
-  createPerson(newPerson: Person): Observable<Person[]>{
-    this.PersonList.push(newPerson);
-    return of(this.PersonList);
+  // CRUD Operations
+  createPerson(newPerson: Person): Observable<Person>{
+    this.persons.push(newPerson);
+    return of(newPerson);
   }
   //retrieve
   getPersonById(PersonId: number): Observable<Person | undefined> {
-    const person = this.PersonList.find(person => person.id === PersonId);
-    return of(person);
+    return of (this.persons.find(person => person.id === PersonId));
   }
   //update
-  updatePerson(updatedPerson: Person): Observable<Person[]>{
-    const index = this.PersonList.findIndex(person => person.id === updatedPerson.id);
-    if (index !== -1) {
-      this.PersonList[index] = updatedPerson;
+  updatePerson(updatedPerson: Person): Observable<Person | undefined>{
+    const index = this.persons.findIndex(person => person.id == updatedPerson.id);
+    if (index > -1) {
+      this.persons[index] = updatedPerson;
+      return of(updatedPerson);
     }
-    return of(this.PersonList);
+    return of(updatedPerson);
   }
   //delete
-  deletePerson(PersonId: number): Observable<Person[]>{
-    this.PersonList = this.PersonList.filter(person => person.id !== PersonId);
-    return of(this.PersonList);
+  deletePerson(PersonId: number): void {
+    this.persons = this.persons.filter((person => person.id !== PersonId));
+  }
+
+  generateNewId(): number {
+    return this.persons.length > 0 ? Math.max(...this.persons.map(person => person.id)) + 1 : 1;
   }
 }

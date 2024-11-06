@@ -1,1 +1,44 @@
-<p>modify-person works!</p>
+<form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input type="number" id="id" formControlName="id" />
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" id="age" formControlName="age" />
+  </div>
+
+  <div class="form-group">
+    <label for="faveFood">Favourite Food</label>
+    <input type="text" id="faveFood" formControlName="faveFood" />
+  </div>
+
+  <div class="form-group">
+    <label for="hairColour">Hair Colour</label>
+    <input type="text" id="hairColour" formControlName="hairColour" />
+  </div>
+
+  <div class="form-group">
+    <label for="isTeamLead">Team Lead?</label>
+    <input type="text" id="isTeamLead" formControlName="isTeamLead"/>
+  </div>
+
+  <div class="form-group">
+    <label for="img">Image</label>
+    <input type="text" id="img" formControlName="img">
+  </div>
+
+  <button type="submit">Submit</button>
+
+  <button type="button" (click)="onEdit()">Edit</button>
+
+  <button type="button" (click)="onDelete()">Delete</button>
+
+  <button type="button" (click)="navigateToPersonList()">Back to List</button>
+</form>
