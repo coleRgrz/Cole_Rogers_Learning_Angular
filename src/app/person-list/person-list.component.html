@@ -2,7 +2,7 @@
   <h3>{{Person?.name}}</h3>
   <p>Age: {{Person?.age}}</p>
   <p>Favourite food: {{Person?.faveFood | titlecase}}</p>
-  <p>Hair Colour: {{Person?.hairColour}}</p>
+  <p>{{Person| hairColour}}</p>
   <p>Team Lead?: {{Person?.isTeamLead | uppercase}}</p>
   <p>Today's sales: {{Person?.sales | currency: 'CAD': "symbol-narrow"}}</p>
   <img src="{{Person?.img}}" alt = "{{Person?.name}}" height="200" width="300">

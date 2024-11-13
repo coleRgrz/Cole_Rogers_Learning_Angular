@@ -4,6 +4,7 @@ import {PersonList} from "../Shared/Modules/mock-person";
 import {CurrencyPipe, NgOptimizedImage, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {PersonService} from "../Services/person.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {HairColourPipe} from "../pipes/hair-colour.pipe";
 
 @Component({
   selector: 'app-person-list-item',
@@ -12,7 +13,8 @@ import {ActivatedRoute, Router} from "@angular/router";
     NgOptimizedImage,
     CurrencyPipe,
     UpperCasePipe,
-    TitleCasePipe
+    TitleCasePipe,
+    HairColourPipe
   ],
   templateUrl: './person-list-item.component.html',
   styleUrl: './person-list-item.component.css'
