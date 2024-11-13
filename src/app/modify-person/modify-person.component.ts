@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PersonService} from "../services/person.service";
+import {PersonService} from "../Services/person.service";
 import {Person} from "../Shared/Modules/user";
 
 @Component({

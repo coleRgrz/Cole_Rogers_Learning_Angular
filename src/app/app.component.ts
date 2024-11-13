@@ -3,7 +3,7 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import { Person} from "./Shared/Modules/user";
 import {NgForOf, NgIf} from "@angular/common";
 import {PersonListComponent} from "./person-list/person-list.component";
-import {PersonService} from "./services/person.service";
+import {PersonService} from "./Services/person.service";
 import {PersonListItemComponent} from "./person-list-item/person-list-item.component";
 
 @Component({

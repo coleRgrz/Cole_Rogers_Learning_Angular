@@ -1,24 +1,53 @@
 import {Component, Input} from '@angular/core';
 import {Person} from "../Shared/Modules/user";
 import {PersonList} from "../Shared/Modules/mock-person";
-import {NgOptimizedImage} from "@angular/common";
-import {PersonService} from "../services/person.service";
-import {Router} from "@angular/router";
+import {CurrencyPipe, NgOptimizedImage, TitleCasePipe, UpperCasePipe} from "@angular/common";
+import {PersonService} from "../Services/person.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-person-list-item',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    CurrencyPipe,
+    UpperCasePipe,
+    TitleCasePipe
   ],
   templateUrl: './person-list-item.component.html',
   styleUrl: './person-list-item.component.css'
 })
 export class PersonListItemComponent {
+  PersonList: Person[] = [];
+  error: string | null = null;
+  currentIndex: number = 0;
   @Input() Person!: Person;
-  constructor(private PersonService: PersonService, private router: Router) {
+  constructor(private PersonService: PersonService,
+              private router: Router,
+              private route: ActivatedRoute) {
   }
 
+  ngOnInit() {
+    this.PersonService.getPerson().subscribe({
+      next: (data: Person[]) => {
+        this.PersonList = data;
+        this.error = null;
+
+        this.route.paramMap.subscribe(params => {
+          const id = Number(params.get('id'));
+          if (id) {
+            this.currentIndex = this.PersonList.findIndex(Person => Person.id === id);
+            this.Person = this.PersonList[this.currentIndex];
+          }
+        });
+      },
+      error: err => {
+        this.error = 'Error fetching person';
+        console.error("Error fetching person", err);
+      },
+      complete: () => console.log("Person data fetch complete!")
+    });
+  }
   onEdit(): void {
     this.router.navigate(['/modify-Person'])
   }

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Person} from "../Shared/Modules/user";
-import {NgForOf, NgClass} from "@angular/common";
+import {CurrencyPipe, NgForOf, NgClass, UpperCasePipe, TitleCasePipe} from "@angular/common";
 import {PersonListItemComponent} from "../person-list-item/person-list-item.component";
-import {PersonService} from "../services/person.service";
+import {PersonService} from "../Services/person.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-person-list',
@@ -10,14 +11,18 @@ import {PersonService} from "../services/person.service";
   imports: [
     NgForOf,
     NgClass,
-    PersonListItemComponent
+    PersonListItemComponent,
+    CurrencyPipe,
+    UpperCasePipe,
+    TitleCasePipe
   ],
   templateUrl: './person-list.component.html',
   styleUrl: './person-list.component.css'
 })
-export class PersonListComponent {
+export class PersonListComponent implements OnInit{
   PersonList: Person [] = [];
-  constructor(private PersonService: PersonService) {
+  error: string | null = null;
+  constructor(private PersonService: PersonService, private router: Router) {
   }
 
   ngOnInit(){
@@ -26,5 +31,17 @@ export class PersonListComponent {
       error: err => console.error("Error fetching People", err),
       complete:() => console.log("Person data fetch complete!")
     })
+  }
+
+  onEdit(): void {
+    this.router.navigate(['/modify-Person'])
+  }
+  onDelete(id?: number): void {
+    console.log(id)
+    for (let i = 0; i <= this.PersonList.length; i++) {
+      if (this.PersonList[i].id == id) {
+        this.PersonList.splice(i, 1);
+      }
+    }
   }
 }
