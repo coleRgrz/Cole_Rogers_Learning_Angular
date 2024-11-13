@@ -6,15 +6,27 @@ import {PersonListComponent} from "./app/person-list/person-list.component";
 import {PersonListItemComponent} from "./app/person-list-item/person-list-item.component";
 import {ModifyPersonComponent} from "./app/modify-person/modify-person.component";
 import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
+import {HttpClient, provideHttpClient} from "@angular/common/http";
+import {importProvidersFrom} from "@angular/core";
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/Person', pathMatch: 'full'},
   {path: 'Person', component: PersonListComponent},
-  {path: 'Person/:id', component: PersonListItemComponent},
-  {path: 'modify-Person', component: ModifyPersonComponent},
-  {path: '**', component:PageNotFoundComponent},
+  {path: 'Person/:id',
+    loadComponent: () =>
+      import('./app/person-list-item/person-list-item.component').then(m => m.PersonListItemComponent)}, // Lazy Loaded
+  {path: 'modify-Person',
+    loadComponent: () =>
+      import('./app/modify-person/modify-person.component').then(m => m.ModifyPersonComponent)},
+  {path: '**',
+    loadComponent: () =>
+      import('./app/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent)},
 ];
 
-bootstrapApplication(AppComponent, {providers:[provideRouter(routes)]})
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers:[
+    provideHttpClient(),
+    provideRouter(routes),
+  ],
+}).catch((err) => console.error(err));
