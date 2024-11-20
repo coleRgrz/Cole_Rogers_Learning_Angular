@@ -5,6 +5,7 @@ import {PersonListItemComponent} from "../person-list-item/person-list-item.comp
 import {PersonService} from "../Services/person.service";
 import {Router} from "@angular/router";
 import {HairColourPipe} from "../pipes/hair-colour.pipe";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-person-list',
@@ -16,7 +17,8 @@ import {HairColourPipe} from "../pipes/hair-colour.pipe";
     CurrencyPipe,
     UpperCasePipe,
     TitleCasePipe,
-    HairColourPipe
+    HairColourPipe,
+    HoverHighlightDirective
   ],
   templateUrl: './person-list.component.html',
   styleUrl: './person-list.component.css'

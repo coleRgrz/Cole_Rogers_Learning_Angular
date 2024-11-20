@@ -5,6 +5,7 @@ import {CurrencyPipe, NgOptimizedImage, TitleCasePipe, UpperCasePipe} from "@ang
 import {PersonService} from "../Services/person.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HairColourPipe} from "../pipes/hair-colour.pipe";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-person-list-item',
@@ -14,7 +15,8 @@ import {HairColourPipe} from "../pipes/hair-colour.pipe";
     CurrencyPipe,
     UpperCasePipe,
     TitleCasePipe,
-    HairColourPipe
+    HairColourPipe,
+    HoverHighlightDirective
   ],
   templateUrl: './person-list-item.component.html',
   styleUrl: './person-list-item.component.css'

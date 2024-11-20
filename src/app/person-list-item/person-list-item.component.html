@@ -6,6 +6,6 @@
   <p>Team Lead?: {{Person?.isTeamLead | uppercase}}</p>
   <p>Today's sales: {{Person?.sales | currency: 'CAD': "symbol-narrow"}}</p>
   <img ngSrc="{{Person?.img}}" alt = "{{Person?.name}}" height="200" width="300">
-  <button type="button" (click)="onEdit()">Edit</button>
-  <button type="button" (click)="onDelete(Person?.id)">Delete</button>
+  <button type="button" (click)="onEdit()" [appHoverHighlight]="'green'">Edit</button>
+  <button type="button" (click)="onDelete(Person?.id)" [appHoverHighlight]="'red'">Delete</button>
 </div>
