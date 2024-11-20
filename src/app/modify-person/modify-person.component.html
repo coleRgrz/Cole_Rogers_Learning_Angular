@@ -1,37 +1,37 @@
 <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="id">ID</label>
-    <input type="number" id="id" formControlName="id" />
+    <input type="number" id="id" formControlName="id" appHighlightOnFocus="lightgreen"/>
   </div>
 
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" id="name" formControlName="name" />
+    <input type="text" id="name" formControlName="name" appHighlightOnFocus="red"/>
   </div>
 
   <div class="form-group">
     <label for="age">Age</label>
-    <input type="number" id="age" formControlName="age" />
+    <input type="number" id="age" formControlName="age" appHighlightOnFocus="purple"/>
   </div>
 
   <div class="form-group">
     <label for="faveFood">Favourite Food</label>
-    <input type="text" id="faveFood" formControlName="faveFood" />
+    <input type="text" id="faveFood" formControlName="faveFood" appHighlightOnFocus="orange"/>
   </div>
 
   <div class="form-group">
     <label for="hairColour">Hair Colour</label>
-    <input type="text" id="hairColour" formControlName="hairColour" />
+    <input type="text" id="hairColour" formControlName="hairColour" appHighlightOnFocus="blue"/>
   </div>
 
   <div class="form-group">
     <label for="isTeamLead">Team Lead?</label>
-    <input type="text" id="isTeamLead" formControlName="isTeamLead"/>
+    <input type="text" id="isTeamLead" formControlName="isTeamLead" appHighlightOnFocus="pink"/>
   </div>
 
   <div class="form-group">
     <label for="img">Image</label>
-    <input type="text" id="img" formControlName="img">
+    <input type="text" id="img" formControlName="img" appHighlightOnFocus="grey">
   </div>
 
   <button type="submit">Add</button>
