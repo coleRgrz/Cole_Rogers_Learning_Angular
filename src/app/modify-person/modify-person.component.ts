@@ -8,6 +8,7 @@ import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
 import {MatFormField, MatFormFieldModule, MatLabel} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
 import {NgIf} from "@angular/common";
+import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-modify-person',
@@ -22,7 +23,8 @@ import {NgIf} from "@angular/common";
     MatLabel,
     MatCheckboxModule,
     MatButtonModule,
-    NgIf
+    NgIf,
+    MatTooltip
   ],
   templateUrl: './modify-person.component.html',
   styleUrl: './modify-person.component.css'
