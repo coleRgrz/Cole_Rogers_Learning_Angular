@@ -4,7 +4,7 @@ export interface Person{
   age: number,
   faveFood: string,
   hairColour: string,
-  isTeamLead?: string,
+  isTeamLead?: boolean,
   sales?: number,
   img?: string;
 }

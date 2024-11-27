@@ -3,14 +3,26 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {ActivatedRoute, Router} from "@angular/router";
 import {PersonService} from "../Services/person.service";
 import {Person} from "../Shared/Modules/user";
-import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
+import {MatInputModule} from "@angular/material/input";
+import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
+import {MatFormField, MatFormFieldModule, MatLabel} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-modify-person',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    HighlightOnFocusDirective
+    MatInputModule,
+    MatFormField,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckbox,
+    MatLabel,
+    MatCheckboxModule,
+    MatButtonModule,
+    NgIf
   ],
   templateUrl: './modify-person.component.html',
   styleUrl: './modify-person.component.css'

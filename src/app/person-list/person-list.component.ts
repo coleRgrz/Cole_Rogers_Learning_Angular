@@ -5,7 +5,7 @@ import {PersonListItemComponent} from "../person-list-item/person-list-item.comp
 import {PersonService} from "../Services/person.service";
 import {Router} from "@angular/router";
 import {HairColourPipe} from "../pipes/hair-colour.pipe";
-import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 
 @Component({
   selector: 'app-person-list',
@@ -18,7 +18,10 @@ import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
     UpperCasePipe,
     TitleCasePipe,
     HairColourPipe,
-    HoverHighlightDirective
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardContent
   ],
   templateUrl: './person-list.component.html',
   styleUrl: './person-list.component.css'

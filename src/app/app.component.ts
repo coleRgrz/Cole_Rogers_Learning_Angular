@@ -5,11 +5,13 @@ import {NgForOf, NgIf} from "@angular/common";
 import {PersonListComponent} from "./person-list/person-list.component";
 import {PersonService} from "./Services/person.service";
 import {PersonListItemComponent} from "./person-list-item/person-list-item.component";
+import {MatToolbar} from "@angular/material/toolbar";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, PersonListComponent, PersonListItemComponent, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, NgForOf, NgIf, PersonListComponent, PersonListItemComponent, RouterLink, RouterLinkActive, MatToolbar, MatButton],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

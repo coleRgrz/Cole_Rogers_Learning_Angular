@@ -8,6 +8,8 @@ import {ModifyPersonComponent} from "./app/modify-person/modify-person.component
 import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
 import {HttpClient, provideHttpClient} from "@angular/common/http";
 import {importProvidersFrom} from "@angular/core";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 
 
 const routes: Routes = [
@@ -27,6 +29,6 @@ const routes: Routes = [
 bootstrapApplication(AppComponent, {
   providers:[
     provideHttpClient(),
-    provideRouter(routes),
+    provideRouter(routes), provideAnimationsAsync(),
   ],
 }).catch((err) => console.error(err));
